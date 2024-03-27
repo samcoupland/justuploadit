@@ -13,14 +13,14 @@ defineProps({
 
 <template>
 
-  <Head title="JustUploadIt" />
+  <Head title="Welcome" />
   <div class="bg-white h-screen flex flex-col justify-center items-center">
     <header class="fixed top-0 p-4">
       <!-- dark mode toggle -->
     </header>
     <main class="fixed pb-8">
       <section class="text-center">
-        <h1 class="text-6xl font-serif mb-8">
+        <h1 tabindex="1" class="text-6xl font-serif mb-8">
           JustUploadIt
         </h1>
         <div v-if="canLogin" class="flex flex-col justify-center items-center space-y-4">

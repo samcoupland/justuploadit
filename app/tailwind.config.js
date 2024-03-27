@@ -17,10 +17,10 @@ export default {
                 sans: ["lato", ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                "primary-light": "#f4ede4",
                 "primary-color" : "#e2802e",
+                "primary-light": "#fcbb7c",
                 "primary-dark": "#d36d09",
-                "primary-highlight": "#fcbb7c",
+                "primary-highlight": "#f1ebe3",
                 "main-dark": "#283944",
                 "main-light": "#f5f5f5",
             },
