@@ -10,6 +10,11 @@ export default {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.vue",
     ],
+    variants: {
+        extend: {
+            display: ["group-hover"],
+        },
+    },
     theme: {
         extend: {
             fontFamily: {
