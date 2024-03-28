@@ -23,6 +23,7 @@ export default {
                 "primary-highlight": "#f1ebe3",
                 "main-dark": "#283944",
                 "main-light": "#f5f5f5",
+                "border": "#f5eced",
             },
         },
     },
