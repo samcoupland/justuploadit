@@ -26,8 +26,8 @@ defineProps({
         <div v-if="canLogin" class="flex flex-col justify-center items-center space-y-4">
           <div class="flex">
             <Link v-if="$page.props.auth.user" :href="route('dashboard')"
-              class="uppercase mx-5 w-36 py-2 text-black transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]">
-            Dashboard
+              class="uppercase border-2 border-primary-color bg-primary-color mx-5 w-36 py-2 text-white  transition-colors duration-500 ease-in-out hover:bg-primary-dark hover:border-primary-light">
+            Upload
             </Link>
 
             <template v-else>
