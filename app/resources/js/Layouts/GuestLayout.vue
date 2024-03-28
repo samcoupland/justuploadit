@@ -7,7 +7,7 @@ import { Link } from '@inertiajs/vue3';
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-primary-highlight">
         <div class="w-28 h-28">
             <Link href="/">
-                <ApplicationLogo class="fill-current text-primary-color" />
+                <ApplicationLogo />
             </Link>
         </div>
 

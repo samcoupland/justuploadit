@@ -26,7 +26,8 @@ const uploadReady = false
 
   <div class="flex flex-col">
     <div class="flex items-center flex-auto">
-      <form class="flex items-center flex-auto p-2 h-16 border-primary-color border-2 border-dashed"
+      <form @click="console.log('PICK A FILE')"
+        class=" cursor-pointer flex items-center flex-auto p-2 h-16 border-primary-color border-2 border-dashed"
         @submit.prevent="submit">
         <!-- <Link :href="route('upload')"> -->
         <input class="file-input" type="file" name="file" ref="fileInput" hidden />
