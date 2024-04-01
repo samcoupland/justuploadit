@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
@@ -63,7 +62,7 @@ import { Link } from '@inertiajs/vue3';
       </header>
 
       <!-- Page Content -->
-      <main>
+      <main class="pb-10">
         <slot />
       </main>
     </div>
