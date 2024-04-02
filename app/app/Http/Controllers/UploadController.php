@@ -3,13 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
+use Inertia\Response;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 use App\Models\UploadedFile;
-use App\Models\User;
 
 class UploadController extends Controller
 {
-    // stores the upload
+    /**
+     * Display the registration view.
+     */
+    public function show(): Response
+    {
+        return Inertia::render('Dashboard/Partials/FileUploadForm');
+    }
+
+    /**
+     * Handles image upload route.
+     */
     public function store(Request $request): RedirectResponse
     {
         // Validate the incoming file. Refuses anything bigger than 2048 kilobytes (=2MB)
@@ -31,24 +42,12 @@ class UploadController extends Controller
         $uploadedFile->original_name = $file->getClientOriginalName();
         $uploadedFile->file_path = $filePath;
         $uploadedFile->location = config('env') === 'local' ? 'local' : 'S3';
-        $uploadedFile->userId = $request->user()->getKey();
+        $uploadedFile->custom_order = 0;
+        $uploadedFile->user_Id = $request->user()->getKey();
         $uploadedFile->save();
 
         // Redirect back to the index page with a success message
         return redirect()->route('dashboard')
             ->with('success', "File `{$uploadedFile->original_name}` uploaded successfully.");
-    }
-
-    // shows the create form
-    public function create()
-    {
-        return view('uploads.create');
-    }
-
-    // shows the uploads index
-    public function index(Request $request)
-    {
-        $uploadedFiles = UploadedFile::where('user_id', $request->user()->getKey());
-        return view('uploads.index', compact('uploadedFiles'));
     }
 }

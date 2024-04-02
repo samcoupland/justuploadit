@@ -29,12 +29,13 @@ function resetUploadText() {
 // Upload form submission
 function submit() {
   form.post('/uploads/store');
-  resetUploadText();
   uploadReady.value = false;
   isDragging.value = false;
   uploadComplete.value = true;
+  uploadText.value = 'Your file has been uploaded';
   setTimeout(() => {
     uploadComplete.value = false;
+    resetUploadText();
   }, 2000);
 }
 
@@ -101,7 +102,8 @@ function dragleave() {
     </label>
     <input type="file" name="Upload file" id="uploadFile" @input="onSelected" hidden />
 
-    <!-- <InputError class="mt-2" :message="form.errors.uploadFile" /> -->
+    <!-- Fix required -->
+    <InputError class="mt-2" :message="form.errors.uploadFile" />
 
     <div class="flex justify-end items-center mt-4">
       <PrimaryButton type="submit" :class="{ 'opacity-25': !uploadReady }" :disabled="!uploadReady">

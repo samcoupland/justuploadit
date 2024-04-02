@@ -17,8 +17,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Upload Image Routes
-Route::get('/uploads', [UploadController::class, 'index'])->name('uploads.index');
-Route::post('uploads/create', [UploadController::class, 'create'])->name('uploads.create');
+Route::get('uploads/show', [UploadController::class, 'show'])->name('uploads.show');
 Route::post('uploads/store', [UploadController::class, 'store'])->name('uploads.store');
 
 Route::middleware('auth')->group(function () {
