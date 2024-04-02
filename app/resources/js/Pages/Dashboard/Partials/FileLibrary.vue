@@ -1,8 +1,6 @@
 <script setup>
 import Card from './Card.vue';
 
-const cards = [];
-
 </script>
 
 <template>
@@ -12,6 +10,7 @@ const cards = [];
   </header>
 
   <div class="overflow-hidden grid gap-4 grid-cols-[repeat(auto-fill,minmax(155px,1fr))]">
+    <!-- {{ console.log(uploadedFiles) }} -->
     <Card/>
     <Card/>
     <Card/>

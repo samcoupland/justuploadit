@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\ImageLibraryController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,6 +16,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Image Library routes
+Route::get('/uploads', [ImageLibraryController::class, 'index'])->name('uploads.index');
 
 // Upload Image Routes
 Route::get('uploads/show', [UploadController::class, 'show'])->name('uploads.show');
